@@ -137,9 +137,11 @@ button { -webkit-tap-highlight-color: transparent; }
   #status-panel { left: 10px; top: 10px; width: calc(100vw - 20px); }
   #controls-hint { display: none; }
   .hud-button { display: none; }
-  #dialogue { left: 10px; bottom: 10px; width: calc(100vw - 20px); grid-template-columns: 48px 1fr; min-height: 70px; }
+  #toast { top: auto; bottom: calc(276px + env(safe-area-inset-bottom)); }
+  #interact-prompt { bottom: calc(224px + env(safe-area-inset-bottom)); }
+  #dialogue { left: 10px; bottom: calc(116px + env(safe-area-inset-bottom)); width: calc(100vw - 20px); grid-template-columns: 48px 1fr; min-height: 70px; max-height: 96px; z-index: 13; }
   #dialogue-avatar { width: 48px; height: 48px; border-radius: 13px; }
-  #dialogue-text { font-size: 11px; }
+  #dialogue-text { font-size: 11px; max-height: 54px; overflow-y: auto; }
   .start-card, .ending-card { padding: 28px 22px; }
   .start-meta { grid-template-columns: 1fr; }
   .meta-chip { min-height: 0; }
