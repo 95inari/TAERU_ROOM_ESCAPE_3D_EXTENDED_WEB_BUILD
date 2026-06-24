@@ -18,7 +18,7 @@
   --danger: #ff9cad;
 }
 * { box-sizing: border-box; }
-html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--bg); font-family: Inter, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; -webkit-touch-callout: none; user-select: none; overscroll-behavior: none; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; overflow-x: hidden; background: var(--bg); font-family: Inter, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; -webkit-touch-callout: none; user-select: none; overscroll-behavior: none; }
 button, input { font: inherit; }
 button { -webkit-tap-highlight-color: transparent; }
 #app, #app canvas { width: 100%; height: 100%; display: block; touch-action: none; }
@@ -29,7 +29,7 @@ button { -webkit-tap-highlight-color: transparent; }
 #scanline { z-index: 6; opacity: .08; background: repeating-linear-gradient(180deg, transparent 0 3px, rgba(210,240,255,.12) 4px); mix-blend-mode: screen; }
 @keyframes noiseShift { 0% { transform: translate(0,0); } 25% { transform: translate(-2%,1%); } 50% { transform: translate(1%,-2%); } 75% { transform: translate(2%,2%); } }
 
-.overlay { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 22px; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; background: radial-gradient(circle at 50% 35%, rgba(42,80,106,.24), transparent 48%), rgba(3,7,12,.84); backdrop-filter: blur(13px); }
+.overlay { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 22px; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; background: radial-gradient(circle at 50% 35%, rgba(42,80,106,.24), transparent 48%), rgba(3,7,12,.84); backdrop-filter: blur(13px); }
 .start-card, .ending-card { width: min(770px, 100%); border: 1px solid var(--line); border-radius: 28px; padding: 38px 40px; background: linear-gradient(145deg, rgba(15,25,38,.96), rgba(5,10,17,.96)); box-shadow: 0 35px 120px rgba(0,0,0,.58), inset 0 1px 0 rgba(255,255,255,.04); }
 .eyebrow { color: #93adbf; font: 700 10px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .25em; text-transform: uppercase; }
 .start-card h1 { margin: 15px 0 14px; font-size: clamp(45px, 8vw, 84px); line-height: .88; letter-spacing: -.065em; color: #f5fbff; text-shadow: 0 0 35px rgba(193,235,255,.12); }
@@ -131,8 +131,8 @@ button { -webkit-tap-highlight-color: transparent; }
 }
 @media (max-width: 700px) {
   #start-screen { place-items: start center; padding: 16px 16px max(110px, calc(54px + env(safe-area-inset-bottom))); }
-  .start-card { margin: 0 auto; }
-  .start-card h1 { font-size: clamp(42px, 14vw, 70px); letter-spacing: -.055em; }
+  .start-card { width: 100%; max-width: calc(100vw - 32px); margin: 0 auto; overflow: hidden; }
+  .start-card h1 { font-size: clamp(34px, 11vw, 48px); letter-spacing: -.035em; }
   .button-row .primary-button, .button-row .secondary-button { flex: 1 1 100%; min-height: 48px; }
   #status-panel { left: 10px; top: 10px; width: calc(100vw - 20px); }
   #controls-hint { display: none; }
